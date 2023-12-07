@@ -19,7 +19,7 @@ jobs:
           run: echo "Deployment ${{ toJSON(github.event) }}"
         - name: push
           if: github.event_name == 'push'
-          run: echo "push ${{ toJSON(github.event) }}"
+          run: echo "push ${{ github.event.ref }}"
         - name: pull_request
           if: github.event_name == 'pull_request'
           run: echo "pull_request ${{ toJSON(github.event) }}"
