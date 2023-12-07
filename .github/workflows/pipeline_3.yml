@@ -13,19 +13,19 @@ jobs:
         steps:
         - name: workflow_dispatch
           if: github.event_name == 'workflow_dispatch'
-          run: printf "workflow_dispatch ${{ github.event }}"
+          run: printf "workflow_dispatch ${{ toJSON(github.event) }}"
         - name: deployment
           if: github.event_name == 'deployment'
-          run: printf "Deployment ${{ github.event }}"
+          run: printf "Deployment ${{ toJSON(github.event) }}"
         - name: push
           if: github.event_name == 'push'
           run: printf "push ${{ toJSON(github.event) }}"
         - name: pull_request
           if: github.event_name == 'pull_request'
-          run: printf "pull_request ${{ github.event }}"
+          run: printf "pull_request ${{ toJSON(github.event) }}"
         - name: PR_Merged
           if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
-          run: printf "pull_request +  Merged ${{ github.event }}"
+          run: printf "pull_request +  Merged ${{ toJSON(github.event) }}"
         - name: release
           if: github.event_name == 'release'
-          run: printf "release ${{ github.event }}"
+          run: printf "release ${{ toJSON(github.event) }}"
