@@ -1,2 +1,2 @@
 # serie-mundial
-Repositorio donde se almacenara los laboratorios
+Repositorio donde se almacenara los laboratorios, 2
