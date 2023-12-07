@@ -1,0 +1,25 @@
+name: pipeline-2
+on:    
+    workflow_dispatch:
+    push:
+    deployment:    
+    pull_request:
+jobs:
+    get_config:
+        runs-on: ubuntu-latest
+        steps:
+        - name: workflow_dispatch
+          if: github.event_name == 'workflow_dispatch'
+          run: echo "workflow_dispatch"
+        - name: deployment
+          if: github.event_name == 'deployment'
+          run: echo "Deployment"
+        - name: push
+          if: github.event_name == 'push'
+          run: echo "push"
+        - name: pull_request
+          if: github.event_name == 'pull_request'
+          run: echo "pull_request"
+        - name: PR_Merged
+          if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+          run: echo "pull_request +  Merged"
