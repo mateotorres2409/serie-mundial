@@ -14,14 +14,14 @@ jobs:
         - name: checkout_current
           uses: actions/checkout@v4
           with:
-            path: current  
+            path: current
         - name: permission
           shell: bash
-          run: chmod +x ./current/script/test_2.sh        
+          run: chmod +x ./current/scripts/test_2.sh        
         - name: getHostname
           id: getHostname
           shell: bash
-          run: ./current/script/test_2.sh     
+          run: ./current/scripts/test_2.sh     
         - name: getPing
           id: getPing
           shell: bash
