@@ -5,7 +5,7 @@ permissions:
     actions: read
 jobs:
     initial:                   
-        uses: mateotorres2409/serie-mundial-reusable/.github/workflows/hello_world.yml@feature/initial
+        uses: mateotorres2409/serie-mundial-reusable/.github/workflows/hello_world.yml@v1.0.0
         with:
             name: ${{ vars.name }}
             version_other: feature/markdown
