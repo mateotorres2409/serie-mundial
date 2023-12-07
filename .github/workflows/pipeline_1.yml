@@ -10,8 +10,7 @@ jobs:
             name: ${{ vars.name }}
             version_other: feature/markdown
             environment: integration
-            env_text: ${{ vars.env_text }}
         secrets: inherit
-        
+
             
 
