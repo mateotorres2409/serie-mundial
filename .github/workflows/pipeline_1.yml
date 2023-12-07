@@ -1,12 +1,14 @@
 name: pipeline-1
-on:
+on:    
     workflow_dispatch:
+permissions:
+    actions: read
 jobs:
-    initial:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout_current
-              uses: actions/checkout@v3
-            - name: print_hello
-              run: |
-                echo "Hello World!"
+    initial:   
+        uses: mateotorres2409/serie-mundial-reusable/.github/workflows/hello_world.yml@v0.0.1
+        with:
+            name: ${{ vars.name }}
+            version_other: feature/markdown
+        secrets:
+            gh_pat: ${{ secrets.gh_pat }}
+
