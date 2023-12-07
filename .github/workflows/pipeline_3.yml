@@ -19,7 +19,7 @@ jobs:
           run: printf "Deployment ${{ github.event }}"
         - name: push
           if: github.event_name == 'push'
-          run: printf "push ${{ github.event }}"
+          run: printf "push ${{ toJSON(github.event) }}"
         - name: pull_request
           if: github.event_name == 'pull_request'
           run: printf "pull_request ${{ github.event }}"
