@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
     push:
         branches:
-        - feataure/**
+        - feature/**
 jobs:
     get_config:
         runs-on: ubuntu-latest
