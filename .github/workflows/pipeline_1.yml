@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
 jobs:
     initial:   
-        uses: mateotorres2409org/serie-mundial-reusable@feature/initial
+        uses: mateotorres2409/serie-mundial-reusable@feature/initial
         with:
             name: ${{ vars.name }}
             version_other: feature/markdown
