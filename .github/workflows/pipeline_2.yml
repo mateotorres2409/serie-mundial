@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             hostname: ${{ steps.getHostname.outputs.hostname }}
-            ping: ${{ steps.getHostname.outputs.ping }}
+            ping: ${{ steps.getPing.outputs.ping }}
         steps:
         - name: checkout_current
           uses: actions/checkout@v4
