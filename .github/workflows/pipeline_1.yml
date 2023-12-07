@@ -1,6 +1,8 @@
 name: pipeline-1
-on:
+on:    
     workflow_dispatch:
+permissions:
+    actions: read
 jobs:
     initial:   
         uses: mateotorres2409/serie-mundial-reusable@v0.0.1
