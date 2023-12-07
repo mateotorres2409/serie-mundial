@@ -1,0 +1,31 @@
+name: pipeline-3
+on:    
+    workflow_dispatch:
+    push:
+    deployment:    
+    pull_request:
+    release:
+        types:
+        - published
+jobs:
+    get_config:
+        runs-on: ubuntu-latest
+        steps:
+        - name: workflow_dispatch
+          if: github.event_name == 'workflow_dispatch'
+          run: echo "workflow_dispatch ${{ toJSON(github.event) }}"
+        - name: deployment
+          if: github.event_name == 'deployment'
+          run: echo "Deployment ${{ toJSON(github.event) }}"
+        - name: push
+          if: github.event_name == 'push'
+          run: echo "push ${{ github.event.ref }}"
+        - name: pull_request
+          if: github.event_name == 'pull_request'
+          run: echo "pull_request ${{ toJSON(github.event) }}"
+        - name: PR_Merged
+          if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+          run: echo "pull_request +  Merged ${{ toJSON(github.event) }}"
+        - name: release
+          if: github.event_name == 'release'
+          run: echo "release ${{ toJSON(github.event) }}"
