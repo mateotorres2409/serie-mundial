@@ -4,11 +4,13 @@ on:
 permissions:
     actions: read
 jobs:
-    initial:   
-        uses: mateotorres2409/serie-mundial-reusable/.github/workflows/hello_world.yml@v0.0.1
+    initial:                   
+        uses: mateotorres2409/serie-mundial-reusable/.github/workflows/hello_world.yml@v1.0.0
         with:
             name: ${{ vars.name }}
             version_other: feature/markdown
-        secrets:
-            gh_pat: ${{ secrets.gh_pat }}
+            environment: integration
+        secrets: inherit
+
+            
 
